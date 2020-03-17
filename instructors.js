@@ -33,7 +33,29 @@ exports.post =(req, res)=>{
         
         return res.redirect("/instructors")
     })
+}
 
-   // return res.send(req.body)
+
+//Show
+exports.show = (req, res)=>{
+    const {id} = req.params
+
+    const foundInstructor = data.instructors.find(instructor=>{
+        if(id == instructor.id){
+            return true
+        }
+    })
+
+    if(!foundInstructor) return res.send("Instructor não encontrado")
+
+    const instructor = {
+        ...foundInstructor,
+        age: "",
+        gender:"",
+        services:"",
+        created_at:"",
+    }
+
+    return res.render("instructors/show",{instructor})
 }
 
