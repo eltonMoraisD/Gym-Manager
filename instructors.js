@@ -1,6 +1,6 @@
 const fs = require("fs")
 const data = require("./data.json")
-const {age} = require("./utils")
+const {age,date} = require("./utils")
 
 //create - exporta o post
 exports.post =(req, res)=>{
@@ -73,6 +73,11 @@ exports.edit = (req,res) =>{
 
     if(!foundInstructor) return res.send("Instructor não encontrado")
 
-    return res.render('instructors/edit',{instructor: foundInstructor})
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth)  // yyyy-mm-dd
+    }
+
+    return res.render('instructors/edit',{instructor})
 }
 
