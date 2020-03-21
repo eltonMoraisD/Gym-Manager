@@ -1,7 +1,12 @@
 # Gym-Manager
-Controlo de Academia
 
-#Run Services
+
+
+#Run Server
+
+
+
+
 yarn start
 
 #browser
