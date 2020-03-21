@@ -5,6 +5,10 @@ Controlo de Academia
 yarn start
 
 #browser
+
+
+
+
 http://localhost:3000/instructors/
 
 
