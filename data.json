@@ -1,15 +1,6 @@
 {
   "instructors": [
     {
-      "id": 1,
-      "avatar_url": "http://google.com",
-      "name": "Elton Morais",
-      "birth": 1584662400000,
-      "gender": "M",
-      "services": "CrossFitt, Musculação",
-      "created_at": 1584375711982
-    },
-    {
       "id": 2,
       "avatar_url": "http://mozila.com",
       "name": "Livian Morais",
@@ -17,15 +8,6 @@
       "gender": "F",
       "services": "Esteira,Levantamento de peso",
       "created_at": 1584375738162
-    },
-    {
-      "id": 3,
-      "avatar_url": "http://opera.com",
-      "name": "Antonio Delgado",
-      "birth": 1584489600000,
-      "gender": "M",
-      "services": "Esteira,Levantamento de peso",
-      "created_at": 1584375930849
     },
     {
       "id": 4,
