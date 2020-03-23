@@ -85,12 +85,14 @@ exports.edit = (req,res) =>{
     return res.render('instructors/edit',{instructor})
 }
 
-//Put
+//Put - atualizar
 exports.put = (req, res) => {
     const {id} = req.body
+    let index = 0
 
-    const foundInstructor = data.instructors.find(instructor=>{
+    const foundInstructor = data.instructors.find((instructor,foundIndex)=>{
         if(id == instructor.id){
+            index = foundIndex
             return true
         }
     })
@@ -100,11 +102,12 @@ exports.put = (req, res) => {
     const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id:Number(req.body.id)
     }
-    data.instructors[id - 1] = instructor
+    data.instructors[index] = instructor
 
-    fs.writeFile("data,json",JSON.stringify(data,null,2), err =>{
+    fs.writeFile("data.json",JSON.stringify(data,null,2), err =>{
         if(err) return res.send('Write error')
 
         return res.redirect(`/instructors/${id}`)
