@@ -2,6 +2,10 @@ const fs = require("fs")
 const data = require("./data.json")
 const {age,date} = require("./utils")
 
+//index
+exports.index = (req,res) =>{
+    return res.render('instructors/index',{instructors:data.instructors})
+}
 //create - exporta o post
 exports.post =(req, res)=>{
     const keys = Object.keys(req.body) // transforma os dados do body(formulario) em um array
@@ -123,4 +127,5 @@ exports.delete = (req, res) =>{
         return res.redirect("/instructors")
     })
 }
+
 
