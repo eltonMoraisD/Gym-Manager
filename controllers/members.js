@@ -9,7 +9,7 @@ exports.index = (req,res) =>{
 exports.show = (req, res)=>{
     const {id} = req.params
 
-    const foundMember = data.members.find(member=>{
+    const foundMember = data.members.find(member =>{
         if(id == member.id){
             return true
         }
